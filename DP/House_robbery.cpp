@@ -10,7 +10,7 @@ public:
     // top Down
     int f(vector<int> &v , int i){
         if(v.size()-1 == i) return v[i];  // only one house then
-        if(v.size()-2 == i) return max(v[i], v[i+1]);  //  only two house the
+        if(v.size()-2 == i) return max(v[i], v[i+1]);  //  only two house then
         if(dp[i] != -1) return dp[i];
         return dp[i] = max(v[i]+f(v,i+2), 0+f(v,i+1));
     }
