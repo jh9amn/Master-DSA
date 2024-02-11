@@ -20,7 +20,8 @@ using namespace std;
     s.insert(3);
     s.insert(4);
     s.insert(5);  
-    cout<<"size "<<s.size()<<" ";      // 5 1 2 3 4   
+    cout<<"size "<<s.size()<<" ";      // 5 1 2 3 4  
+ 
     
     // erase function is used to erase the element in the set
     // s.erase(2);         // 5 1 3 4 
@@ -37,4 +38,6 @@ using namespace std;
     for(int ele : s){
         cout<<ele<<" ";
     }
+
  }
+
