@@ -13,7 +13,7 @@ class Solution
         int currsum = arr[0], start = 0;
         vector<int> ans;
         for(int i=1; i<=arr.size(); i++){
-            while(currsum > s && start < i -1){
+            while(currsum > s && start < i -1){ 
                 currsum -= arr[start];
                 start++;
             }
