@@ -37,12 +37,40 @@ public:
             if(idx >= s.size()) return true;
             
             for(int i=idx; i<s.size(); i++){
-                string a = s.substr(idx,  i - idx + 1);
+                string a = s.substr(idx,  i - idx + 1);     // pos , len
                 if(mp.find(a) != mp.end()){
                     if(solve(i + 1)) return true;
                 }
             }
             return false;
+        };
+        
+        if(solve(0)) return true;
+        return false;
+    }
+
+
+    // with dp
+    int wordBreak(int n, string s, vector<string> &dictionary) {
+        //code here
+        int dp[1100];
+        memset(dp, -1, sizeof dp);
+        unordered_map<string,int> mp;
+        for(int i=0; i<dictionary.size(); i++){
+            mp[dictionary[i]]++;
+        }
+        
+        function <int (int) > solve = [&](int idx){
+            if(idx >= s.size()) return 1;
+            if(dp[idx] != -1) return dp[idx];
+            
+            for(int i=idx; i<s.size(); i++){
+                string a = s.substr(idx,  i - idx + 1);
+                if(mp.find(a) != mp.end()){
+                    if(solve(i + 1)) return dp[idx] = 1;
+                }
+            }
+            return dp[idx] =  0;
         };
         
         if(solve(0)) return true;
