@@ -16,6 +16,8 @@ public:
 	        string ab = e1 + e2;
 	        string ba = e2 + e1;
 	        return ab > ba;
+            // if( ab > ba then the is already produce the large Number, return true and do not change in the order)
+            // else swap the order
 	    } );
 	    
 	    string res = "";
