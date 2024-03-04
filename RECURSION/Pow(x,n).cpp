@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
+// T.C = n-> n/2 -> n/4 -> n/8......
+// T.C = O(logN)
 class Solution {
 public:
     double solve(double x, long n){
