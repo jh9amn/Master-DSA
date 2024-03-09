@@ -11,6 +11,7 @@ class Solution{
     char nthCharacter(string s, int r, int n) {
         // Brute Force 
         // T.C = O(r * s.size())
+        int Size = s.size();
         while(r--){
             string ans = "";
             for(int i=0; i<s.size(); i++){
@@ -22,7 +23,7 @@ class Solution{
                 }
                 // whenever my ans.size  > s.size then break because we need that char which is under the s.size
                 // no need to generate string more than s.size because ( n  < s.size)
-                if(ans.size() > s.size()) break;
+                if(ans.size() > Size) break;
             }
             s = ans;
         }
