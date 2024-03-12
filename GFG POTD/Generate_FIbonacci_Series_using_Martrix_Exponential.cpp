@@ -8,6 +8,7 @@ class Solution {
     long long mat[3][3], res[3][3]; 
     
 // Source : https://www.geeksforgeeks.org/problems/generalised-fibonacci-numbers1820/1
+// T.C = O(logN)  S.C = O(1)
     
     void mul(long long res[3][3], long long mat[3][3], long long m)
     {
@@ -48,14 +49,15 @@ class Solution {
         res[0][0] = res[1][1] = res[2][2] = 1; 
         mat[0][0] = a;   
         mat[0][1] = b;
-        mat[0][2] = mat[1][0] = mat[2][2] = 1;
+        mat[0][2] = c;
+        mat[1][0] = mat[2][2] = 1;
         mat[1][1] = mat[1][2] = mat[2][0] = mat[2][1] = 0;
         if(n<=2)
             return (1%m);  
         else
         {
             mat_exp(n-2,m);   
-            return (res[0][0] + res[0][1] + c*res[0][2])%m; 
+            return (res[0][0] + res[0][1] + res[0][2])%m; 
         }
     }
 };
