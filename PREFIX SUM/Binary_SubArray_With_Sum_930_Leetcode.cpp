@@ -1,12 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//  Source : https://leetcode.com/problems/binary-subarrays-with-sum/
 class Solution {
 public:
     
             // 3rd Approach
         // USing Two Pointer Method or Sliding WIndow 
     // T.C = O(n)   S.C = O(1)
+// This method applicable only for positive elements vector only....
     int subArray(vector<int> &nums, int goal){
             int i = 0;
             int j = 0;
@@ -68,7 +69,6 @@ public:
         return (j < 0) ? i : i - j;
     }
 };
-
 
 
 int main(){
