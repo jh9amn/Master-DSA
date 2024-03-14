@@ -18,7 +18,7 @@ public:
             if(leftSum == rightSum) return i;
         }
         return -1;
-        
+         
         
 //         Method 2 but sqrt can be in double: 
 //         int x = sqrt(n * (n + 1) / 2);
