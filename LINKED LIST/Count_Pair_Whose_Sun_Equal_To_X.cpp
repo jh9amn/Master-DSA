@@ -51,11 +51,11 @@ class Solution{
   public:
     // your task is to complete this function
     int countPairs(struct Node* head1, struct Node* head2, int x) {
-        map<int,int> mp;
+        set<int> st;
         
         Node *temp = head1;
         while(temp != NULL){
-            mp[temp->data]++;
+            st.insert(temp ->data);
             temp = temp ->next;
         }
         
@@ -64,9 +64,9 @@ class Solution{
         while(temp != NULL){
             int secVal = x - temp->data;
             
-            if(mp.find(secVal) != mp.end()){
-                if(mp[secVal] > 0) count++;
-                if(mp[secVal] != 0) mp[secVal]--;
+            if(st.find(secVal) != st.end()){
+                count++;
+                st.erase(secVal);
             }
             temp = temp ->next;
         }
