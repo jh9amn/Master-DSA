@@ -22,8 +22,10 @@ public:
                 i++;
             }
             
+            // (j - i + 1 ) gives no. of subarray b/w i to j
             count += (j - i + 1);
             j++;
+
         }
         return count;
     }
