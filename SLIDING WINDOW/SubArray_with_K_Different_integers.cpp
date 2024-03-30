@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution {
 public:
+    // T.C = O(2N)  S.C = O(N)
     int subArrays(vector<int>& nums, int k) {
         map<int,int> mp; // ele , freq
         
