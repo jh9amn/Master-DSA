@@ -116,9 +116,20 @@ public:
     
     
     int minValue(Node* root) {
-        minVal = INT_MAX;
-        dfs(root);
-        return minVal;
+        // Approch 1
+        // minVal = INT_MAX;
+        // dfs(root);
+        // return minVal;
+        
+        
+        // Approch 2 
+        // If it is a BST then the min element present in the left side of Tree
+        if(root == NULL) return -1;
+        while(root -> left != NULL){
+            root = root ->left;
+        }
+        
+        return root -> data;
     }
 };
 
