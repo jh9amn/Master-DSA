@@ -153,7 +153,7 @@ class Solution {
         vector<int> inorder;
         Inorder(root, inorder);
         
-        
+        // how many ele less than prev ele then count++
         // Count Inversions code
         if(inorder.size()<=1)return 0;
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
