@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution {
 public:
+    // Approach 1
     // without memeization worst time complexity is O(3^n)
     // T.C =  O(n^2)      S.C = O(n^2)
     bool solve(int i, int open, string &s, int n, int dp[][101]){
@@ -36,7 +37,7 @@ public:
     }
     
     
-    // Approach 2
+    // Approach 2       T.C = O(n^2)     S.C = O(n^2)
     bool solve_Tabulation(int n, string &s){
         vector<vector<bool>> dp(n+1,vector<bool> (n+1, false));
         
@@ -65,13 +66,70 @@ public:
     }
     
     
+    // Approach 3 using Stack    T.C = O(n)   S.C = O(n)
+    bool solve2(string &s){
+        // here store the index to compare that the symbol ocmes first or * comes first to remove that symbol
+        stack<int> st;
+        stack<int> star;
+        
+        for(int i=0; i<s.size(); i++){
+            
+            if(s[i] == '(') st.push(i);
+            
+            else if(s[i] == ')') {
+                if(st.size() > 0) st.pop();     // if ( is available
+                else if(star.size() > 0) star.pop();       // if (  is not available but * is available
+                else return false;        // return false
+            }
+            
+            else if(s[i] == '*') {
+                star.push(i);
+            }
+        }
+        
+        while(!st.empty() and star.size() > 0){
+            if(st.top() < star.top()) {
+                st.pop();
+                star.pop();
+            }
+            else return false;
+        }
+        return st.size() == 0 ? true : false;
+    }
+    
+    
+    // Approach 4 leftCount and rightCount Approach
+    // T.C = O(n)   S.C = O(1)
+    bool solve3(string s, int n){
+        int openBrackets = 0, closeBrackets = 0;
+        for(int i=0; i<n; i++){
+            if(s[i] == '(' or s[i] == '*')  openBrackets++;
+            else openBrackets--;
+            if(openBrackets < 0) return false;
+        }
+        
+        for(int i=n-1; i>=0; i--){
+            if(s[i] == ')' or s[i] == '*') {
+                closeBrackets++;
+            }
+            else closeBrackets--;
+            if(closeBrackets < 0) return false;
+        }
+        return true;
+    }
+    
     bool checkValidString(string s) {
         int dp[101][101];
         memset(dp, -1, sizeof dp);
         int n = s.size();
         // return solve(0, 0, s, n, dp);
         
-        return solve_Tabulation(n, s);
+        // return solve_Tabulation(n, s);
+        
+        // Using Stack
+        // return solve2(s);
+        
+        return solve3(s,n);
     }
 };
 
