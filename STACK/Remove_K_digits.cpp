@@ -3,6 +3,8 @@ using namespace std;
 
 class Solution {
 public:
+    // T.C - O(n)
+    // S.C - O(n)
     string removeKdigits(string num, int k) {
         stack<char> st;
         
