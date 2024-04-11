@@ -10,6 +10,8 @@ using namespace std;
 
 class Solution{
     public:
+    // T.C = O(m) == no of time to convert into bit
+    // S.C - O(m) == to Storing all the Bit
     // function to convert a given Gray equivalent n to Binary equivalent.
     int grayToBinary(int n)
     {
