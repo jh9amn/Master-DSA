@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    T.C - O(1) S.X=C - O(1)
+    T.C - O(1) S.C - O(1)
     long long reversedBits(long long x) {
         
         // filling the bits...
