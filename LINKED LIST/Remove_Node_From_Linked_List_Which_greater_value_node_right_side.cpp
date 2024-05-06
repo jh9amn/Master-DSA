@@ -79,7 +79,7 @@ public:
         
         
 // Approach 3 using reversList
-// T.C = O(1) S.C = O(1);
+// T.C = O(n) S.C = O(1);
         head = reverseList(head);
         ListNode* curr = head;
         ListNode* prev = NULL;
