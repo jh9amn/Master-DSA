@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution {
 public:
+    // T.C = O(2^n)     S.C = O(n) + O(2^n)
     
     void solve(set<string> &st, string &s, string &currWord, vector<string> &ans, int i) {
         if(i == s.size()){
