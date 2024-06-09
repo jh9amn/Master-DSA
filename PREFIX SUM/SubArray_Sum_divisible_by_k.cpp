@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/subarray-sums-divisible-by-k/
+// https://youtu.be/C0okNE_tt14?si=8Yff3wJMdc12rOei
+
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
