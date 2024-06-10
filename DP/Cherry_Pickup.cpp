@@ -4,7 +4,6 @@ using namespace std;
 
 class Solution {
 public:
-
 // assume path traversel of going and then coming as two person are started from same path but going in different direction but when they collapse then increase the cherry value just one time because at time of going the first persone already take path value and make that path value is now as ZERO.
     
 //     int dp[50][50][50][50]; 
@@ -73,8 +72,10 @@ public:
     int cherryPickup(vector<vector<int>>& grid) {
         memset(dp,-1,sizeof dp);
         int n = grid.size();
+        // return max(0, solve(0, 0, 0, 0, grid, n));
         return max(0, solve(0, 0, 0, grid, n));
     }
 };
+
 
 int main(){}
