@@ -37,6 +37,7 @@ class Solution {
             temp[i][2] = brr[i];
         }
         
+        // custom comparator on the basis of arr[0][i] in decending order..
         // sort(temp.begin(), temp.end(), [&temp] (int p[], int q[]) -> p[0] - q[0];);
 
         // sort in the basis of arr[0][i] in decencing order 
