@@ -12,7 +12,7 @@ class Solution {
         for(int i=4; i<=n; i++){
             int j = i;
             while(j){
-                if(j%10 == 4) {     // when lastly remainder 4 and this is last 4 then break
+                if(j%10 == 4) {     //  rem == 4 then count++ and leave remaining 4 digit in that num
                     count++;
                     break;
                 }
