@@ -2,8 +2,8 @@
 ## Find Maximum Valumn Of Cuboid
 ### https://www.geeksforgeeks.org/problems/magical-box5306/1
 
-![alt text](../EXTRA/Photo/IMG20240619213759.jpg)
-![alt text](../EXTRA/Photo/IMG20240619213808.jpg)
+![alt text](/PHOTOS/Photo/IMG20240619213759.jpg)
+![alt text](/PHOTOS/Photo/IMG20240619213808.jpg)
 
 
 
@@ -17,3 +17,4 @@
                 return v;
             }
         };
+....
