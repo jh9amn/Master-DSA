@@ -1,4 +1,6 @@
-
+#include<bits/stdc++.h>
+using namespace std;
+int main(){}
 
 // (Khandani Sliding Window without extra space)
 // T.C : O(n)
