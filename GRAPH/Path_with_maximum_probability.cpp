@@ -29,7 +29,6 @@ public:
             for(auto it : adj[currNode]){
                 int adjNode = it.first;
                 double adjProb = it.second;
-                cout<<adjNode<<" - > "<<adjProb;
                 if(res[adjNode] < currProb * adjProb){
                     res[adjNode] = currProb * adjProb;
                     pq.push({res[adjNode], adjNode});
