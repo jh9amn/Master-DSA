@@ -39,7 +39,7 @@ class Solution {
         
         
         //** Hash map to find triplets...
-        // Nut the last test case is not passing..
+        // but the last test case is not passing..
         // for(int i=0; i<n-2; i++){
         //     unordered_map<int, int> mp;
             
