@@ -48,7 +48,8 @@ public:
         int i = 0;
         int j = 0;
         int n = nums.size();
-
+        
+        // T.C = O(2*n)
         while(j < n){
             updateSetBits(nums[j], bitCounts, 1);
 
