@@ -1,4 +1,9 @@
-class Solution {
+ #include<bits/stdc++.h>
+ using namespace std;
+ int main(){}
+
+ 
+ class Solution {
 public:
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
         int minDist = INT_MAX;
