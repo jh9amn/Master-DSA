@@ -1,8 +1,11 @@
 {
   "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
   "files.associations": {
+    ".env*": "dotenv",
     "cmath": "cpp",
     "complex": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "functional": "cpp",
+    "ostream": "cpp"
   }
 }
