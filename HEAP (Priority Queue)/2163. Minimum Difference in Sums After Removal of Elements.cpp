@@ -37,7 +37,7 @@ public:
 
         // Step 1: Track min sum of n elements from left using max-heap
         long long leftSum = 0;
-        for(int i=0; i<2*n; i++) {      // min cumulative sum of size n from left in (range 0 -> 3n - n)
+        for(int i=0; i<2*n; i++) {      // min cumulative sum of size n from left in (range 0 -> 3n - n -1)
             maxHeap.push(nums[i]);
             leftSum += nums[i];
             if(maxHeap.size() > n) {
