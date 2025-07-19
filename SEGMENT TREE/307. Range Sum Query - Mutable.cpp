@@ -3,26 +3,26 @@ using namespace std;
 int main(){}
 
 /* With simple array using approach which is giving TLE */
-// class NumArray {
-// private:
-//     vector<int> arr;
-// public:
-//     NumArray(vector<int>& nums) {
-//         this->arr = nums;
-//     }
+class NumArray {
+private:
+    vector<int> arr;
+public:
+    NumArray(vector<int>& nums) {
+        this->arr = nums;
+    }
     
-//     void update(int index, int val) {
-//         arr[index] = val;
-//     }
+    void update(int index, int val) {
+        arr[index] = val;
+    }
     
-//     int sumRange(int left, int right) {
-//         int sum = 0;
-//         for(int i=left; i<=right; i++) {
-//             sum += arr[i];
-//         }
-//         return sum;
-//     }
-// };
+    int sumRange(int left, int right) {
+        int sum = 0;
+        for(int i=left; i<=right; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+};
 
 /********************************************************************************/
 
