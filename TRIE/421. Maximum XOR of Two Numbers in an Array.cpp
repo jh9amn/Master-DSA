@@ -46,6 +46,8 @@ class Trie{
         Node* node = root;
         int maxXor = 0;
         for(int i=31; i>=0; i--){
+            if(!node)
+                break;
             int bit = (val >> i) & 1;
             // find opposite bit, make help to make maximize XOR
             if(node -> containKey(1 - bit)) {
