@@ -26,13 +26,13 @@ int main() {
                 int evenCnt = 0, oddCnt = 0;
                 if(t % 2 == 1) {
                     // a == odd
-                    // odd ->>> even start and even End     a = 5, 5 -> 6 -> 7 -> 8
+                    // odd ->>> even start and so even count is more
                     if(a % 2 == 1){
                          evenCnt = (t+1) / 2;
                          oddCnt = t / 2;
                     }
                     // a == even
-                    // even ->>> odd start and odd End     a = 6, 6 -> 7 -> 8 -> 9
+                    // even ->>> odd start and so odd count is more
                     else {
                         oddCnt = (t+1) / 2;
                         evenCnt = t / 2;
@@ -41,7 +41,6 @@ int main() {
                 }
                 // evenCnt == oddCnt == (b-a) / 2;
                 else {
-                    // cannot apply XOR to incerase here
                     oddCnt = t / 2;
                     evenCnt = t / 2;
                 }
