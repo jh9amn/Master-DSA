@@ -9,7 +9,7 @@ public:
     }
     
     bool transfer(int account1, int account2, long long money) {
-        if(account1-1 <= N and account2-1 <= N and balance[account1-1] >= money){
+        if(account1 <= N and account2 <= N and balance[account1-1] >= money){
             balance[account1-1] -= money;
             balance[account2-1] += money;
             return true;
@@ -18,7 +18,7 @@ public:
     }
     
     bool deposit(int account, long long money) {
-        if(N <= account-1 || money < 0){
+        if(N < account || money < 0){
             return false;
         }
         balance[account-1] += money;
@@ -26,7 +26,7 @@ public:
     }
     
     bool withdraw(int account, long long money) {
-        if(account-1 <= N and balance[account-1] >= money){
+        if(account <= N and balance[account-1] >= money){
             balance[account-1] -= money;
             return true;
         }
