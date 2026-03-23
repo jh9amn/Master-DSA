@@ -54,3 +54,7 @@ public:
         return nums[pivot_idx];
     }
 };
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){}
