@@ -1,11 +1,9 @@
-```python
-import os
-
-md_content = """# The Knuth-Morris-Pratt (KMP) Algorithm
+```markdown
+# Mastering the Knuth-Morris-Pratt (KMP) Algorithm
 
 The **Knuth-Morris-Pratt (KMP)** algorithm is an elegant, highly optimized string-matching algorithm designed to solve a foundational computer science problem: **finding all occurrences of a `pattern` string inside a `text` string.**
 
-While the naive string-matching approach can degrade to a sluggish $O(n \\times m)$ time complexity, KMP guarantees a linear runtime of **$O(n + m)$**. It achieves this by enforcing a golden rule: **the algorithm never looks backward at characters in the `text` that it has already processed.** Instead, it analyzes the structure of the pattern itself to skip redundant checks.
+While the naive string-matching approach can degrade to a sluggish $O(n \times m)$ time complexity, KMP guarantees a linear runtime of **$O(n + m)$**. It achieves this by enforcing a golden rule: **the algorithm never looks backward at characters in the `text` that it has already processed.** Instead, it analyzes the structure of the pattern itself to skip redundant checks.
 
 ---
 
@@ -43,11 +41,11 @@ To determine exactly how many shifts to skip during a mismatch, KMP precomputes 
 
 For any given substring slice `pattern[0...i]`, `LPS[i]` stores the length of the longest proper prefix that is also a valid suffix of that slice.
 
-* *Proper Prefix:* A prefix that is not equal to the entire string itself.
+* **Proper Prefix:** A prefix that is not equal to the entire string itself.
 
 ### LPS Construction Trace
 
-Let's analyze how the table is built step-by-step for the pattern `P = "ababaca"`:
+Let's analyze how the table is built step-by-step for the pattern `P = "ababaca"` by matching the pattern against itself:
 
 1. **`"a"`** $\rightarrow$ No proper prefix/suffix available $\rightarrow$ **0**
 2. **`"ab"`** $\rightarrow$ Prefixes: `["a"]` | Suffixes: `["b"]`. No overlap $\rightarrow$ **0**
@@ -145,8 +143,8 @@ int main() {
     string text = "ABABDABACDABABCABAB";
     string pattern = "ABABCABAB";
     
-    cout << "Searching text: \\"" << text << "\\"\\n";
-    cout << "Searching for:  \\"" << pattern << "\\"\\n\\n";
+    cout << "Searching text: \"" << text << "\"\n";
+    cout << "Searching for:  \"" << pattern << "\"\n\n";
     
     KMPSearch(text, pattern);
     
@@ -164,16 +162,6 @@ When assessing whether to choose KMP for a problem, consider these performance p
 * **Time Complexity:** $\mathcal{O}(n + m)$. Precomputing the lookup table takes $\mathcal{O}(m)$ time, and the scanning window evaluates the text string exactly once in $\mathcal{O}(n)$ time.
 * **Space Complexity:** $\mathcal{O}(m)$ extra space allocation to hold the structural pointers inside the `lps` array.
 * **Structural Advantage:** KMP thrives when the search patterns possess high structural repetition (e.g., `ababab`, `aaaa`). If your search inputs lack repetitive internal prefixes, the `lps` array evaluates mostly to zeroes, causing the loop to drop back into standard linear step intervals.
-"""
-
-file_path = "kmp_algorithm.md"
-
-# Fixed the indentation error below so it runs cleanly!
-
-with open(file_path, "w", encoding="utf-8") as f:
-f.write(md_content)
-
-print(f"File written successfully: {file_path}")
 
 ```
 
