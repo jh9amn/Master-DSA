@@ -3,6 +3,7 @@ using namespace std;
 
 class Expression {
 
+private:
     int precedence(char c){
         if(c == '^')
             return 3;
@@ -18,6 +19,7 @@ class Expression {
         return (isalpha(c) or isdigit(c));
     }
 
+public:
     // INFIX to POSTFIX
     string infixToPostfix(string &s){
         stack<char> st;
