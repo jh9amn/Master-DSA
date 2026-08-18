@@ -168,4 +168,117 @@ public:
         return ans;
     }
 
+
+    /*
+
+    POSTFIX TO INFIX
+
+    whenever encounter operator :)
+    t1 = right operand
+        operator
+    t2 = left oprand
+    */
+    string postfixToInfix(string &s) {
+        stack<string> st;
+        for (int i = 0; i < s.size(); i++){
+            if (isOperand(s[i])) {
+                st.push(string(1, s[i]));
+            }
+            else{
+                string t1 = st.top();
+                st.pop();
+                string t2 = st.top();
+                st.pop();
+                string con = '(' + t2 + s[i] + t1 + ')';
+                st.push(con);
+            }
+        }
+        return st.top();
+    }
+
+    /*
+
+    PREFIX TO INFIX
+    hence, whenever encounter operator :)
+    t1 = left operand
+        operator
+    t2 = right oprand
+
+    */
+
+    string prefixToInfix(string &s){
+        stack<string> st;
+        int i = s.size() - 1;
+        while(i>=0){
+            if(isOperand(s[i])) {
+                st.push(string(1, s[i]));
+            }
+            else{
+                string t1 = st.top();
+                st.pop();
+                string t2 = st.top();
+                st.pop();
+                string con = '(' + t1 + s[i] + t2 + ')';
+                st.push(con);
+            }
+            i--;
+        }
+        return st.top();
+    }
+
+    /*
+
+    POSTFIX TO PREFIX
+    hence, whenever encounter operator :)
+    oprator + top2 + top1
+
+    */
+
+    string postfixToPrefix(string &s){
+        stack<string> st;
+        for (int i = 0; i < s.size(); i++) {
+            if(isOperand(s[i])){
+                st.push(string(1, s[i]));
+            }
+            else {
+                string t1 = st.top();
+                st.pop();
+                string t2 = st.top();
+                st.pop();
+                string con = s[i] + t2 + t1;
+                st.push(con);
+            }
+        }
+        return st.top();
+    }
+
+    /*
+
+    PREFIX TO POSTFIX
+    hence, whenever encounter operator :)
+    top1 + top2 + operator
+
+    */
+
+    string prefixToPostfix(string &s){
+        stack<string> st;
+        int i = s.size() - 1;
+        while (i >= 0)
+        {
+            if(isOperand(s[i])){
+                st.push(string(1, s[i]));
+            }
+            else {
+                string t1 = st.top();
+                st.pop();
+                string t2 = st.top();
+                st.pop();
+                string con = t1 + t2 + s[i];
+                st.push(con);
+            }
+            i--;
+        }
+        return st.top();
+    }
+
 };
