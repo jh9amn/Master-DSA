@@ -66,4 +66,47 @@ class Solution {
 
 
 // BFS
-
+// Toposort are applicable only on DAG
+// if we could not able to find toposort of V size, then their a cycle
+using vi = vector<int>;
+class Solution {
+  public:
+    bool isCyclic(int V, vector<vector<int>> &edges) {
+        unordered_map<int, vi> adj;
+        for(auto &it : edges) {
+            adj[it[0]].push_back(it[1]);
+        }
+        
+        queue<int> q;
+        
+        
+        int inorder[V] = {0};
+        // that many edges come to that node
+        for(auto it: edges) {
+            inorder[it[1]]++;
+        }
+        
+        for(int i=0; i<V; i++){
+            if(inorder[i] == 0) {
+                q.push(i);
+            }
+        }
+        
+        vi topo;
+        while(!q.empty()) {
+            int node = q.front();
+            q.pop();
+            
+            topo.push_back(node);
+            
+            for(auto it: adj[node]) {
+                inorder[it]--;      // remove one edge
+                if(inorder[it] == 0) {
+                    q.push(it);
+                }
+            }
+        }
+        
+        return topo.size() != V;    // toposort size not equal to V means all vertex not reached becaz has cycle
+    }
+};
