@@ -3,8 +3,9 @@ class Solution {
     vector<int> topoSort(int V, vector<vector<int>>& edges) {
         // code here
         /*
+        ** Kah'n algorithm
         ** linear ordering of vertices such that if there is an edge between u & v, u always appears before v in the ordering.
-        **Topological sort can onluy possible in DAG
+        ** Topological sort can onluy possible in DAG
         */
         
         unordered_map<int, vector<int>> adj;
