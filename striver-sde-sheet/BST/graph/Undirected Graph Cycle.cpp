@@ -67,6 +67,41 @@ class Solution {
 
 
 // Using BFS
+// if it is a tree, every node should be visited once only.
+// if we come to the node that we already visted, then it has cycle..
+// if we start parent to two different direction, and in any case if we came to a particular node from direnction then their a cycle in it,
 
+class Solution {    
+  public:
+    bool isCycle(int V, vector<vector<int>>& edges) {
+        
+        unordered_map<int,vi> adj;
+        for(auto it: edges) {
+            adj[it[0]].pb(it[1]);
+            adj[it[1]].pb(it[0]);
+        }
+        
+        vector<int> vis(V, 0);
+        for(int start=0; start<V; start++) {
+            if(vis[start]) continue;
+            queue<pair<int, int>> q;
+            q.push({-1, start});    // parent and node
+            vis[start] = 1;
+            while(!q.empty()) {
+                auto it = q.front();
+                q.pop();
+                int parent = it.first;
+                int node = it.second;
+                for(auto a : adj[node]) {
+                    if(a == parent) continue; 
+                    if(vis[a]) return true;
+                    vis[a] = 1;
+                    q.push({node, a});
+                }
+            }
+        }
+        return false;
+    }
+};
 
 
