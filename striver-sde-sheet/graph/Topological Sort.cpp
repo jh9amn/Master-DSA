@@ -43,3 +43,49 @@ class Solution {
         return toposort;
     }
 };
+
+
+// DFS
+// Simple intitution - simply when DFS is completed we are just storing recursion stack..
+
+using vi = vector<int>;
+class Solution {
+  private:
+    // TC = O(V+E)
+    void dfs(int node, vi &vis, stack<int> &st, unordered_map<int, vi> &adj) {
+        vis[node] = 1;
+        
+        for(auto it: adj[node]) {
+            if(!vis[it]){
+                dfs(it, vis, st, adj);
+            }
+        }
+        
+        st.push(node);
+    }
+  public:
+    vector<int> topoSort(int V, vector<vector<int>>& edges) {
+        // code here
+        unordered_map<int, vi> adj;
+        for(auto it: edges) {
+            adj[it[0]].push_back(it[1]);
+        }
+        
+        vi vis(V,0);
+        stack<int> st;
+        
+        for(int i=0; i<V; i++) {
+            if(vis[i] == 0) {
+                dfs(i, vis, st, adj);
+            }
+        }
+        
+        vi topo;
+        while(!st.empty()){
+            topo.push_back(st.top());
+            st.pop();
+        }
+        
+        return topo;
+    }
+};
