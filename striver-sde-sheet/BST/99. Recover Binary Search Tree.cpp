@@ -18,50 +18,50 @@ TC = O(n) + nlog(n) + O(n)  ~ nlog(n)
 Sc = O(h) + O(n) + O(h)     ~ O(n)
 
 */
-// class Solution {
-// private: 
+class Solution {
+private: 
     
-//     // O(n)
-//     void dfs(TreeNode* root, vi &inorder) {
-//         if(!root) return;
+    // O(n)
+    void dfs(TreeNode* root, vi &inorder) {
+        if(!root) return;
 
-//         dfs(root -> left, inorder);
+        dfs(root -> left, inorder);
 
-//         inorder.push_back(root -> val);
+        inorder.push_back(root -> val);
 
-//         dfs(root -> right, inorder); 
-//     }
+        dfs(root -> right, inorder); 
+    }
 
-//     // O(n)
-//     void dfsFix(TreeNode* root, vi &inorder, int &i) {
-//         if(!root) return;
+    // O(n)
+    void dfsFix(TreeNode* root, vi &inorder, int &i) {
+        if(!root) return;
 
-//         dfsFix(root -> left, inorder, i);
+        dfsFix(root -> left, inorder, i);
 
-//         if(root -> val != inorder[i]) {
-//             root -> val = inorder[i];
-//         }
+        if(root -> val != inorder[i]) {
+            root -> val = inorder[i];
+        }
 
-//         i++;
+        i++;
 
-//         dfsFix(root -> right, inorder, i); 
-//     }
+        dfsFix(root -> right, inorder, i); 
+    }
 
-// public:
-//     void recoverTree(TreeNode* root) {
-//         vi inorder;
+public:
+    void recoverTree(TreeNode* root) {
+        vi inorder;
 
-//         dfs(root, inorder);
+        dfs(root, inorder);
 
-//         // nlog(n)
-//         sort(begin(inorder), end(inorder));
+        // nlog(n)
+        sort(begin(inorder), end(inorder));
 
 
-//         int i = 0;
-//         dfsFix(root, inorder, i);
+        int i = 0;
+        dfsFix(root, inorder, i);
         
-//     }
-// };
+    }
+};
 
 
 
